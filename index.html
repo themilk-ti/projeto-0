@@ -1,19 +1,183 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #2b2d2f;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        form {
+            display: block;
+            width: 100%;
+            max-width: 414px;
+            margin: 0 auto;
+            background-color: #FFF;
+            color: #2b2d2f;
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        label span {
+            display: block;
+            color: #aaa;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            transition: 0.3s ease-out;
+        }
+
+        label:focus-within span {
+            color: #2b2d2f;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button {
+            appearance: none;
+            outline: none;
+            border: none;
+            background: none;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #bbb;
+            border-radius: 0.5rem;
+            transition: border-color 0.3s ease-out;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #2b2d2f;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin-left: auto;
+            cursor: pointer;
+            background-color: #2b2d2f;
+            color: #FFF;
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease-out;
+        }
+
+        .button:hover {
+            background-color: crimson;
+        }
+
+        .passwd-wrap {
+            position: relative;
+        }
+
+        #show-passwd {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        #show-passwd img {
+            width: 100%;
+            height: auto;
+        }
+
+        #password {
+            padding-right: 3rem;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+
+    <main>
+
+        <form>
+            <h3>Login</h3>
+
+            <label>
+                <span>Usuário</span>
+                <input type="text" id="username" placeholder="Digite o nome do usuário..." />
+            </label>
+
+            <label>
+                <span>Senha</span>
+                <div class="passwd-wrap">
+                    <input type="password" id="password" placeholder="Digite a senha..." autocomplete="off" />
+
+                    <button type="button" id="show-passwd" title="Mostrar Senha">
+                        <img src="./assets/eye_open.svg" alt="Show Password" />
+                    </button>
+                </div>
+            </label>
+
+            <button class="button" type="submit">
+                Entrar
+            </button>
+        </form>
+
+    </main>
+
+    <script>
+        const show_pw_btn = document.querySelector('#show-passwd');
+        const show_pw_icon = show_pw_btn.querySelector('img');
+        const pw_input = document.querySelector('#password');
+
+        show_pw_btn.addEventListener('click', () => {
+            pw_input.type = pw_input.type === 'password'
+                ? 'text'
+                : 'password';
+
+            if (pw_input.type === 'password') {
+                show_pw_icon.src = './assets/eye_open.svg';
+                show_pw_btn.title = 'Mostrar Senha';
+            } else {
+                show_pw_icon.src = './assets/eye_closed.svg';
+                show_pw_btn.title = 'Ocultar Senha';
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>
