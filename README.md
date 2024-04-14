@@ -11,7 +11,7 @@ Propósito do projeto.
 ![Web 1](https://github.com/themilk-ti/projeto-0/blob/main/assets/muro.jpg)
 
 ## Modelo Conceitual
-![Modelo Conceitual](https://github.com/themilk-ti/projeto-0/blob/main/assets/muro.jpg)
+![Modelo Conceitual](https://github.com/themilk-ti/projeto-0/blob/main/assets/background_1.jpg)
 
 # Tecnologias utilizadas
 ## Front end
