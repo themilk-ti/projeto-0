@@ -82,6 +82,15 @@
             border-color: #2b2d2f;
         }
 
+        #show-passwd:focus {
+            background-color: #aaa;
+            border-radius: 0.5rem;
+        }
+
+        .button:focus {
+            color: #aaa;
+        }
+
         .button {
             display: block;
             width: fit-content;
@@ -98,7 +107,8 @@
         }
 
         .button:hover {
-            background-color: crimson;
+            background-color: #bbb;
+            color: #2b2d2f;
         }
 
         .passwd-wrap {
@@ -136,21 +146,22 @@
 
             <label>
                 <span>Usuário</span>
-                <input type="text" id="username" placeholder="Digite o nome do usuário..." />
+                <input type="text" id="username" placeholder="Digite o nome do usuário..." tabindex="1" />
             </label>
 
             <label>
                 <span>Senha</span>
                 <div class="passwd-wrap">
-                    <input type="password" id="password" placeholder="Digite a senha..." autocomplete="off" />
+                    <input type="password" id="password" placeholder="Digite a senha..." autocomplete="off"
+                        tabindex="2" />
 
-                    <button type="button" id="show-passwd" title="Mostrar Senha">
+                    <button type="button" id="show-passwd" title="Mostrar Senha" tabindex="3">
                         <img src="./assets/eye_open.svg" alt="Show Password" />
                     </button>
                 </div>
             </label>
 
-            <button class="button" type="submit">
+            <button class="button" type="submit" tabindex="4">
                 Entrar
             </button>
         </form>
